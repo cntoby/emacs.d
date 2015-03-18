@@ -1,4 +1,5 @@
 (require 'package)
+
 (add-to-list 'package-archives
 	     '("melpa" . "http://melpa.org/packages/") t)
 (when (< emacs-major-version 24)
@@ -6,7 +7,6 @@
 (package-initialize)
 
 (add-to-list 'load-path "~/.emacs.d/lisp")
-(add-to-list 'load-path "~/.emacs.d/ac")
 (add-to-list 'auto-mode-alist '("\\.org\\'" . org-mode))
 (autoload 'markdown-mode "markdown-mode" "Major mode for edting Markdown files" t)
 (add-to-list 'auto-mode-alist '("\\.text\\'" . markdown-mode))
