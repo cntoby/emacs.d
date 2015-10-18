@@ -14,6 +14,9 @@
 (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
 
 (add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
+(let ((default-directory "/usr/local/share/emacs/site-lisp/"))
+  (normal-top-level-add-subdirs-to-load-path))
+
 ;; for auto-complete
 (require 'auto-complete-config)
 (ac-config-default)
