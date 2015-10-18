@@ -13,6 +13,7 @@
 (add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
 (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
 
+(add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
 ;; for auto-complete
 (require 'auto-complete-config)
 (ac-config-default)
