@@ -11,8 +11,21 @@
 (autoload 'markdown-mode "markdown-mode" "Major mode for edting Markdown files" t)
 (add-to-list 'auto-mode-alist '("\\.text\\'" . markdown-mode))
 (add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
-(add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
+;;(add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
 
+(add-to-list 'auto-mode-alist '("\\.md$" . jekyll-markdown-mode))
+;;(add-to-list 'auto-mode-alist '("\\.html" . jekyll-html-mode))
+
+(add-hook 'php-mode-hook '(lambda ()
+			    (auto-complete-mode t)
+			    (require 'ac-php)
+			    (setq ac-sources '(ac-source-php ))
+			    (yas-global-mode 1)
+
+			    (define-key php-mode-map (kbd "C-]") 'ac-php-find-symbol-at-point) ; goto define
+			    (define-key php-mode-map (kbd "C-t") 'ac-php-location-stack-back ) ; go back
+			    ))
+	  
 (let ((default-directory "/usr/local/share/emacs/site-lisp/"))
   (normal-top-level-add-subdirs-to-load-path))
 
