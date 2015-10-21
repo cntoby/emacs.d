@@ -26,6 +26,8 @@
 			    (define-key php-mode-map (kbd "C-t") 'ac-php-location-stack-back ) ; go back
 			    ))
 	  
+(add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
+
 (let ((default-directory "/usr/local/share/emacs/site-lisp/"))
   (normal-top-level-add-subdirs-to-load-path))
 
