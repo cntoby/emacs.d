@@ -3,7 +3,7 @@
 ;; remove proxy settings
 (setenv "http_proxy" nil)
 (setenv "https_proxy" nil)
-(if window-system
+(if (display-graphic-p)
     (progn
       (add-to-list 'default-frame-alist '(tool-bar-lines . 0))
       (add-to-list 'default-frame-alist '(menu-bar-lines . 1))
