@@ -1,7 +1,13 @@
 (require 'package)
+
 ;; remove proxy settings
 (setenv "http_proxy" nil)
 (setenv "https_proxy" nil)
+
+(add-to-list 'default-frame-alist '(tool-bar-lines . 0))
+(add-to-list 'default-frame-alist '(menu-bar-lines . 1))
+(add-to-list 'default-frame-alist '(width . 200))
+(add-to-list 'default-frame-alist '(height . 70))
 
 (add-to-list 'package-archives
 	     '("melpa" . "http://melpa.org/packages/") t)
