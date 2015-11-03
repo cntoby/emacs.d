@@ -10,6 +10,7 @@
       (add-to-list 'default-frame-alist '(width . 200))
       (add-to-list 'default-frame-alist '(height . 70))
       )
+    (load-theme 'tango-dark)
   )
 
 (add-to-list 'package-archives
@@ -78,6 +79,9 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(custom-safe-themes
+   (quote
+    ("9b59e147dbbde5e638ea1cde5ec0a358d5f269d27bd2b893a0947c4a867e14c1" "3cc2385c39257fed66238921602d8104d8fd6266ad88a006d0a4325336f5ee02" default)))
  '(markdown-command
    "pandoc -f markdown -t html -s -—mathjax -—highlight-style pygments"))
 (custom-set-faces
@@ -85,4 +89,4 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ '(default ((t (:background nil)))))
