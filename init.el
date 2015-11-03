@@ -22,6 +22,14 @@
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
 (add-to-list 'auto-mode-alist '("\\.org\\'" . org-mode))
 
+(unless (package-installed-p 'auto-complete)
+  (package-refresh-contents)
+  (package-install 'auto-complete)
+  )
+;; for auto-complete
+(require 'auto-complete-config)
+(ac-config-default)
+
 ;; check and install markdown-mode
 (unless (package-installed-p 'markdown-mode)
   (package-refresh-contents)
@@ -65,14 +73,6 @@
 
 (let ((default-directory "/usr/local/share/emacs/site-lisp/"))
   (normal-top-level-add-subdirs-to-load-path))
-
-(unless (package-installed-p 'auto-complete)
-  (package-refresh-contents)
-  (package-install 'auto-complete)
-  )
-;; for auto-complete
-(require 'auto-complete-config)
-(ac-config-default)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
