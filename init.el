@@ -1,4 +1,7 @@
 (require 'package)
+;; remove proxy settings
+(setenv "http_proxy" nil)
+(setenv "https_proxy" nil)
 
 (add-to-list 'package-archives
 	     '("melpa" . "http://melpa.org/packages/") t)
@@ -8,14 +11,36 @@
 
 (add-to-list 'load-path "~/.emacs.d/lisp")
 (add-to-list 'auto-mode-alist '("\\.org\\'" . org-mode))
+
+;; check and install markdown-mode
+(unless (package-installed-p 'markdown-mode)
+  (package-refresh-contents)
+  (package-install 'markdown-mode)
+  )
 (autoload 'markdown-mode "markdown-mode" "Major mode for edting Markdown files" t)
 (add-to-list 'auto-mode-alist '("\\.text\\'" . markdown-mode))
 (add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
 ;;(add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
 
+;; check jekyll-modes
+(unless (package-installed-p 'jekyll-modes)
+  (package-refresh-contents)
+  (package-install 'jekyll-modes)
+  )
 (add-to-list 'auto-mode-alist '("\\.md$" . jekyll-markdown-mode))
 ;;(add-to-list 'auto-mode-alist '("\\.html" . jekyll-html-mode))
 
+;; check and install haskell-mode
+(unless (package-installed-p 'haskell-mode)
+  (package-refresh-contents)
+  (package-install 'haskell-mode)
+  )
+(add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
+
+(unless (package-installed-p 'ac-php)
+  (package-refresh-contents)
+  (package-install 'ac-php)
+  )
 (add-hook 'php-mode-hook '(lambda ()
 			    (auto-complete-mode t)
 			    (require 'ac-php)
@@ -26,11 +51,15 @@
 			    (define-key php-mode-map (kbd "C-t") 'ac-php-location-stack-back ) ; go back
 			    ))
 	  
-(add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
+
 
 (let ((default-directory "/usr/local/share/emacs/site-lisp/"))
   (normal-top-level-add-subdirs-to-load-path))
 
+(unless (package-installed-p 'auto-complete)
+  (package-refresh-contents)
+  (package-install 'auto-complete)
+  )
 ;; for auto-complete
 (require 'auto-complete-config)
 (ac-config-default)
