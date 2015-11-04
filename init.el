@@ -9,8 +9,8 @@
       (add-to-list 'default-frame-alist '(menu-bar-lines . 1))
       (add-to-list 'default-frame-alist '(width . 200))
       (add-to-list 'default-frame-alist '(height . 70))
+      (add-to-list 'default-frame-alist '(left . 200))
       )
-    (load-theme 'tango-dark)
   )
 
 (add-to-list 'package-archives
@@ -21,6 +21,12 @@
 
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
 (add-to-list 'auto-mode-alist '("\\.org\\'" . org-mode))
+
+(unless (package-installed-p 'sublime-themes)
+  (package-refresh-contents)
+  (package-install 'sublime-themes)
+  )
+(load-theme 'tango-dark)
 
 ;; check and install markdown-mode
 (unless (package-installed-p 'markdown-mode)
