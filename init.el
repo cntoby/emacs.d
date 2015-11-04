@@ -9,7 +9,8 @@
       (add-to-list 'default-frame-alist '(menu-bar-lines . 1))
       (add-to-list 'default-frame-alist '(width . 200))
       (add-to-list 'default-frame-alist '(height . 70))
-      (add-to-list 'default-frame-alist '(left . 200))
+      ;;      (add-to-list 'default-frame-alist (cons 'left (/ (- (x-display-pixel-width) 200) (frame-char-width))))
+      (add-to-list 'default-frame-alist (cons 'left (* 30 (frame-char-width)))) ;; new way to set left of the Emacs init window
       )
   )
 
