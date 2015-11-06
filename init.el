@@ -19,6 +19,7 @@
 	  )
 
 (defun enable-paren-auto-pairs ()
+  (interactive)
   (show-paren-mode)
   ;; automatically insert the right matching bracket
   (electric-pair-mode 1)
