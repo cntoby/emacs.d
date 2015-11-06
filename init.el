@@ -14,9 +14,16 @@
       )
   )
 
+;; set shortcut to open the file explorer
+;(global-set-key (kbd "S-<f1>")
+;		(lambda ()
+;		  (interactive)
+;		  (dired "~/")
+;		  )
+;)
+
 (add-hook 'emacs-lisp-mode-hook
-	  'enable-paren-auto-pairs
-	  )
+	  'enable-paren-auto-pairs)
 
 (defun enable-paren-auto-pairs ()
   (interactive)
@@ -79,10 +86,16 @@
   )
 (add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
 
+(unless (package-installed-p 'ycmd)
+  (package-install 'ycmd)
+  )
+(require 'ycmd)
+
 (unless (package-installed-p 'ac-php)
   (package-refresh-contents)
   (package-install 'ac-php)
   )
+(add-hook 'php-mode-hook 'ycmd-mode)
 (add-hook 'php-mode-hook '(lambda ()
 			    (auto-complete-mode t)
 			    (require 'ac-php)
