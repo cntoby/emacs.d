@@ -14,6 +14,22 @@
       )
   )
 
+(add-hook 'emacs-lisp-mode-hook
+	  'enable-paren-auto-pairs
+	  )
+
+(defun enable-paren-auto-pairs ()
+  (show-paren-mode)
+  ;; automatically insert the right matching bracket
+  (electric-pair-mode 1)
+  (setq electric-pair-pairs
+	'(
+	  (?\" . ?\")
+	  (?\{ . ?\})
+	  )
+	)
+  )
+
 (add-to-list 'package-archives
 	     '("melpa" . "http://melpa.org/packages/") t)
 (when (< emacs-major-version 24)
