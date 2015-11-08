@@ -14,14 +14,6 @@
       )
   )
 
-;; set shortcut to open the file explorer
-;(global-set-key (kbd "S-<f1>")
-;		(lambda ()
-;		  (interactive)
-;		  (dired "~/")
-;		  )
-;)
-
 (add-hook 'emacs-lisp-mode-hook
 	  'enable-paren-auto-pairs)
 
@@ -39,7 +31,7 @@
   )
 
 (add-to-list 'package-archives
-	     '("melpa" . "http://melpa.org/packages/") t)
+	     '("melpa" . "https://melpa.org/packages/"))
 (when (< emacs-major-version 24)
   (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/")))
 (package-initialize)
@@ -76,7 +68,7 @@
   (package-refresh-contents)
   (package-install 'jekyll-modes)
   )
-(add-to-list 'auto-mode-alist '("\\.md$" . jekyll-markdown-mode))
+(add-to-list 'auto-mode-alist '("\\.md\\'" . jekyll-markdown-mode))
 ;;(add-to-list 'auto-mode-alist '("\\.html" . jekyll-html-mode))
 
 ;; check and install haskell-mode
@@ -90,12 +82,17 @@
   (package-install 'ycmd)
   )
 (require 'ycmd)
-
+;(add-hook 'after-init-hook #'global-ycmd-mode)
+(set-variable 'ycmd-server-command '("/usr/local/bin/python" "/Users/toby/.emacs.d/ycmd/ycmd/"))
+(add-hook 'c-mode-hook 'ycmd-mode)
+(add-hook 'python-mode-hook 'ycmd-mode)
+(add-hook 'c++-mode-hook 'ycmd-mode)
+(add-hook 'php-mode-hook 'ycmd-mode)
 (unless (package-installed-p 'ac-php)
   (package-refresh-contents)
   (package-install 'ac-php)
   )
-(add-hook 'php-mode-hook 'ycmd-mode)
+
 (add-hook 'php-mode-hook '(lambda ()
 			    (auto-complete-mode t)
 			    (require 'ac-php)
@@ -106,7 +103,21 @@
 			    (define-key php-mode-map (kbd "C-t") 'ac-php-location-stack-back ) ; go back
 			    ))
 	  
+(semantic-mode 1)
 
+(require 'window-numbering)
+(window-numbering-mode)
+
+(when (package-installed-p 'smex)
+  (require 'smex)
+  (smex-initialize)
+  (global-set-key (kbd "M-x") 'smex)
+  (global-set-key (kbd "M-X") 'smex-major-mode-commands)
+  ;; old M-x function called
+  (global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
+  )
+(require 'smex)
+()
 
 (let ((default-directory "/usr/local/share/emacs/site-lisp/"))
   (normal-top-level-add-subdirs-to-load-path))
