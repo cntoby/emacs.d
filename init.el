@@ -3,32 +3,6 @@
 ;; remove proxy settings
 (setenv "http_proxy" nil)
 (setenv "https_proxy" nil)
-(if (display-graphic-p)
-    (progn
-      (add-to-list 'default-frame-alist '(tool-bar-lines . 0))
-      (add-to-list 'default-frame-alist '(menu-bar-lines . 1))
-      (add-to-list 'default-frame-alist '(width . 200))
-      (add-to-list 'default-frame-alist '(height . 70))
-      ;;      (add-to-list 'default-frame-alist (cons 'left (/ (- (x-display-pixel-width) 200) (frame-char-width))))
-      (add-to-list 'default-frame-alist (cons 'left (* 30 (frame-char-width)))) ;; new way to set left of the Emacs init window
-      )
-  )
-
-(add-hook 'emacs-lisp-mode-hook
-	  'enable-paren-auto-pairs)
-
-(defun enable-paren-auto-pairs ()
-  (interactive)
-  (show-paren-mode)
-  ;; automatically insert the right matching bracket
-  (electric-pair-mode 1)
-  (setq electric-pair-pairs
-	'(
-	  (?\" . ?\")
-	  (?\{ . ?\})
-	  )
-	)
-  )
 
 (add-to-list 'package-archives
 	     '("melpa" . "https://melpa.org/packages/"))
@@ -37,90 +11,21 @@
 (package-initialize)
 
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
-(add-to-list 'auto-mode-alist '("\\.org\\'" . org-mode))
-
-(unless (package-installed-p 'sublime-themes)
-  (package-refresh-contents)
-  (package-install 'sublime-themes)
-  )
-(load-theme 'tango-dark)
-
-(unless (package-installed-p 'auto-complete)
-  (package-refresh-contents)
-  (package-install 'auto-complete)
-  )
-;; for auto-complete
-(require 'auto-complete-config)
-(ac-config-default)
-
-;; check and install markdown-mode
-(unless (package-installed-p 'markdown-mode)
-  (package-refresh-contents)
-  (package-install 'markdown-mode)
-  )
-(autoload 'markdown-mode "markdown-mode" "Major mode for edting Markdown files" t)
-(add-to-list 'auto-mode-alist '("\\.text\\'" . markdown-mode))
-(add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
-;;(add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
-
-;; check jekyll-modes
-(unless (package-installed-p 'jekyll-modes)
-  (package-refresh-contents)
-  (package-install 'jekyll-modes)
-  )
-(add-to-list 'auto-mode-alist '("\\.md\\'" . jekyll-markdown-mode))
-;;(add-to-list 'auto-mode-alist '("\\.html" . jekyll-html-mode))
-
-;; check and install haskell-mode
-(unless (package-installed-p 'haskell-mode)
-  (package-refresh-contents)
-  (package-install 'haskell-mode)
-  )
-(add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
-
-(unless (package-installed-p 'ycmd)
-  (package-install 'ycmd)
-  )
-(require 'ycmd)
-;(add-hook 'after-init-hook #'global-ycmd-mode)
-(set-variable 'ycmd-server-command '("/usr/local/bin/python" "/Users/toby/.emacs.d/ycmd/ycmd/"))
-(add-hook 'c-mode-hook 'ycmd-mode)
-(add-hook 'python-mode-hook 'ycmd-mode)
-(add-hook 'c++-mode-hook 'ycmd-mode)
-(add-hook 'php-mode-hook 'ycmd-mode)
-(unless (package-installed-p 'ac-php)
-  (package-refresh-contents)
-  (package-install 'ac-php)
-  )
-
-(add-hook 'php-mode-hook '(lambda ()
-			    (auto-complete-mode t)
-			    (require 'ac-php)
-			    (setq ac-sources '(ac-source-php ))
-			    (yas-global-mode 1)
-
-			    (define-key php-mode-map (kbd "C-]") 'ac-php-find-symbol-at-point) ; goto define
-			    (define-key php-mode-map (kbd "C-t") 'ac-php-location-stack-back ) ; go back
-			    ))
-	  
-(semantic-mode 1)
-
-(require 'window-numbering)
-(window-numbering-mode)
-
-(when (package-installed-p 'smex)
-  (require 'smex)
-  (smex-initialize)
-  (global-set-key (kbd "M-x") 'smex)
-  (global-set-key (kbd "M-X") 'smex-major-mode-commands)
-  ;; old M-x function called
-  (global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
-  )
-(require 'smex)
-()
 
 (let ((default-directory "/usr/local/share/emacs/site-lisp/"))
   (normal-top-level-add-subdirs-to-load-path))
+
+(require 'init-others)
+(require 'init-themes)
+(require 'init-org-mode)
+(require 'init-yasnippet)
+(require 'init-php)
+(require 'init-haskell)
+(require 'init-markdown)	  
+(require 'init-semantic)
+(require 'init-window-nubmering)
+(require 'init-smex)
+(require 'init-ycmd)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
