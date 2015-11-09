@@ -4,7 +4,7 @@
   )
 
 (defun init-php-mode ()
-  (when (package-installed-p 'ac-php)
+  (when (and (package-installed-p 'ac-php) (featurep 'ac-config-default))
     (require 'ac-php)
     (auto-complete-mode t)
     (setq ac-sources '(ac-source-php))
