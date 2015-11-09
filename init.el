@@ -24,9 +24,11 @@
 (require 'init-markdown)	  
 (require 'init-semantic)
 (require 'init-window-nubmering)
-(require 'init-smex)
+; (require 'init-smex) ; disabled smex, use helm
 (require 'init-company)
 (require 'init-ycmd)
+(require 'init-projectile)
+(require 'init-helm)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
