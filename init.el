@@ -25,6 +25,7 @@
 (require 'init-semantic)
 (require 'init-window-nubmering)
 (require 'init-smex)
+(require 'init-company)
 (require 'init-ycmd)
 
 (custom-set-variables
