@@ -5,7 +5,7 @@
 (ycmd-setup)
 (ycmd-toggle-force-semantic-completion)
 ;(add-hook 'after-init-hook #'global-ycmd-mode)
-(set-variable 'ycmd-server-command '("/usr/local/bin/python" (expand-file-name "~/.emacs.d/ycmd/ycmd/")))
+(set-variable 'ycmd-server-command (list "/usr/local/bin/python" (expand-file-name "~/.emacs.d/ycmd/ycmd/")))
 (add-hook 'c-mode-hook 'ycmd-mode)
 (add-hook 'python-mode-hook 'ycmd-mode)
 (add-hook 'c++-mode-hook 'ycmd-mode)
