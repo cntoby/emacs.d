@@ -24,4 +24,9 @@
 	  )
 	)
   )
+;; init exec-path-from-shell for window based Emacs
+(when (package-installed-p 'exec-path-from-shell)
+  (unless (featurep 'exec-path-from-shell-initialize)
+    (require 'exec-path-from-shell))
+  (exec-path-from-shell-initialize))
 (provide 'init-others)
