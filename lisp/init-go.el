@@ -12,6 +12,9 @@
     (set-face-attribute 'eldoc-highlight-function-argument nil
 			:underline t :foreground "green"
 			:weight 'bold))
+  (when (package-installed-p 'go-snippets)
+    (require 'go-snippets)
+    )
   (when (memq window-system '(mac ns))
     (setq go-eldoc-gocode (expand-file-name "~/Devel/goprojects/bin/gocode"))
     ; (exec-path-from-shell-initialize)
