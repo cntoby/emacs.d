@@ -29,6 +29,7 @@
 (require 'init-ycmd)
 (require 'init-projectile)
 (require 'init-helm)
+(require 'init-go)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
