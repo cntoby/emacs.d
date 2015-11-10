@@ -14,7 +14,7 @@
 
 (let ((default-directory "/usr/local/share/emacs/site-lisp/"))
   (normal-top-level-add-subdirs-to-load-path))
-
+(require 'env-init-from-melpa)
 (require 'init-others)
 (require 'init-themes)
 (require 'init-org-mode)
