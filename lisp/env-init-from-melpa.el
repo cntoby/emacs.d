@@ -34,6 +34,6 @@
   (unless (package-installed-p 'flycheck)
     (package-install 'flycheck))
   (unless (package-installed-p 'flycheck-ycmd)
-    (package-install 'flycheck-ycmd))
+    (package-install 'flycheck-ycmd)))
 
 (provide 'env-init-from-melpa)
