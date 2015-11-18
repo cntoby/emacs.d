@@ -4,5 +4,8 @@
   (when (package-installed-p 'haskell-snippets)
     (require 'haskell-snippets)
     )
+  (when (package-installed-p 'company-ghc)
+;    (add-to-list 'company-backends 'company-ghc)
+    )
   )
 (provide 'init-haskell)
