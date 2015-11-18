@@ -2,6 +2,7 @@
     (progn
       (add-to-list 'default-frame-alist '(tool-bar-lines . 0))
       (add-to-list 'default-frame-alist '(menu-bar-lines . 1))
+      (scroll-bar-mode -1)
       (add-to-list 'default-frame-alist '(width . 200))
       (add-to-list 'default-frame-alist '(height . 70))
       ;;      (add-to-list 'default-frame-alist (cons 'left (/ (- (x-display-pixel-width) 200) (frame-char-width))))
@@ -9,8 +10,12 @@
       )
   )
 
-(add-hook 'emacs-lisp-mode-hook
-	  'enable-paren-auto-pairs)
+;(add-hook 'emacs-lisp-mode-hook
+;	  'enable-paren-auto-pairs)
+
+(add-hook 'after-init-hook 'enable-paren-auto-pairs)
+
+(setq default-fill-column 80) ; limit line length to 80 character
 
 (defun enable-paren-auto-pairs ()
   (interactive)
