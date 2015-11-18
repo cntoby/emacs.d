@@ -21,7 +21,7 @@
 (require 'init-yasnippet)
 (require 'init-php)
 (require 'init-haskell)
-(require 'init-markdown)	  
+(require 'init-markdown)  
 (require 'init-semantic)
 (require 'init-window-nubmering)
 ; (require 'init-smex) ; disabled smex, use helm
@@ -30,6 +30,7 @@
 (require 'init-projectile)
 (require 'init-helm)
 (require 'init-go)
+(require 'init-circe)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
