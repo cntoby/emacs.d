@@ -31,6 +31,7 @@
 (require 'init-helm)
 (require 'init-go)
 (require 'init-circe)
+(require 'init-erlang)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.

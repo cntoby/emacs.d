@@ -37,6 +37,8 @@
     (package-install 'flycheck-ycmd))
   (when (and (package-installed-p 'company) (package-installed-p 'haskell-mode))
     (package-install 'company-ghc)
-    (package-install 'company-ghci)))
+    (package-install 'company-ghci))
+  (unless (package-installed-p 'erlang)
+    (package-install 'erlang)))
 
 (provide 'env-init-from-melpa)
