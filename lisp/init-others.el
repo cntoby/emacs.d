@@ -7,6 +7,12 @@
       (add-to-list 'default-frame-alist '(height . 70))
       ;;      (add-to-list 'default-frame-alist (cons 'left (/ (- (x-display-pixel-width) 200) (frame-char-width))))
       (add-to-list 'default-frame-alist (cons 'left (* 30 (frame-char-width)))) ;; new way to set left of the Emacs init window
+      ;; set chinese fonts
+      (set-face-attribute 'default nil :font
+			  "MingLan_Code 12")
+      (setq default-frame-alist
+	    (append '((font . "MingLan_Code 12")) default-frame-alist))
+      (use-cjk-char-width-table 'zh_CN)
       )
   )
 
