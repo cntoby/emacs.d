@@ -1,9 +1,6 @@
 (if (display-graphic-p)
     (progn
       ;; set chinese fonts
-      ;; (set-face-attribute 'default nil :font "Monaco 12")
-      ;; (setq default-frame-alist
-      ;; (append '((font . "MingLan_Code 12")) default-frame-alist))
       ;; (use-cjk-char-width-table 'zh_CN)
       (setq fonts
 	    (cond ((eq system-type 'darwin)     '("Monaco"    "STHeiti"))
