@@ -1,18 +1,29 @@
 (if (display-graphic-p)
     (progn
+      ;; set chinese fonts
+      ;; (set-face-attribute 'default nil :font "Monaco 12")
+      ;; (setq default-frame-alist
+      ;; (append '((font . "MingLan_Code 12")) default-frame-alist))
+      ;; (use-cjk-char-width-table 'zh_CN)
+      (setq fonts
+	    (cond ((eq system-type 'darwin)     '("Monaco"    "STHeiti"))
+		  ((eq system-type 'gnu/linux)  '("Menlo"     "WenQuanYi Zen Hei"))
+		  ((eq system-type 'windows-nt) '("Consolas"  "Microsoft Yahei"))))
+      (setq face-font-rescale-alist '(("STHeiti" . 1.1) ("Microsoft Yahei" . 1.1) ("WenQuanYi Zen Hei" . 1.1)))
+      (set-face-attribute 'default nil :font
+			  (format "%s:pixelsize=%d" (car fonts) 12))
+      (dolist (charset '(kana han symbol cjk-misc bopomofo))
+	(set-fontset-font (frame-parameter nil 'font) charset
+			  (font-spec :family (car (cdr fonts)))))
+
+      ;; set window size and position
       (add-to-list 'default-frame-alist '(tool-bar-lines . 0))
-      (add-to-list 'default-frame-alist '(menu-bar-lines . 1))
+      (add-to-list 'default-frame-alist '(menu-bar-lines . 0))
       (scroll-bar-mode -1)
       (add-to-list 'default-frame-alist '(width . 200))
-      (add-to-list 'default-frame-alist '(height . 70))
+      (add-to-list 'default-frame-alist '(height . 63)) ; (frame-height) (frame-char-height) 
       ;;      (add-to-list 'default-frame-alist (cons 'left (/ (- (x-display-pixel-width) 200) (frame-char-width))))
       (add-to-list 'default-frame-alist (cons 'left (* 30 (frame-char-width)))) ;; new way to set left of the Emacs init window
-      ;; set chinese fonts
-      (set-face-attribute 'default nil :font
-			  "MingLan_Code 12")
-      (setq default-frame-alist
-	    (append '((font . "MingLan_Code 12")) default-frame-alist))
-      (use-cjk-char-width-table 'zh_CN)
       )
   )
 
