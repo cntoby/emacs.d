@@ -1,0 +1,6 @@
+(when (package-installed-p 'typescript-mode)
+  (autoload 'typescript-mode "typescript-mode" "Major mode for editing TypeScript files" t)
+  (add-to-list 'auto-mode-alist '("\\.ts\\'" . typescript-mode))
+  (add-hook 'typescript-mode-hook 'ycmd-mode)
+  )
+(provide 'init-typescript)

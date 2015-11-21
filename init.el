@@ -32,6 +32,7 @@
 (require 'init-go)
 (require 'init-circe)
 (require 'init-erlang)
+(require 'init-typescript)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
