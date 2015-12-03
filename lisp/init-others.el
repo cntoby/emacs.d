@@ -28,7 +28,7 @@
 ;	  'enable-paren-auto-pairs)
 
 (add-hook 'after-init-hook 'enable-paren-auto-pairs)
-
+;(global-set-key (kbd "C-m") nil)
 (setq default-fill-column 80) ; limit line length to 80 character
 
 (defun enable-paren-auto-pairs ()
