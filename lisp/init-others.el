@@ -21,8 +21,11 @@
       (add-to-list 'default-frame-alist '(height . 63)) ; (frame-height) (frame-char-height) 
       ;;      (add-to-list 'default-frame-alist (cons 'left (/ (- (x-display-pixel-width) 200) (frame-char-width))))
       (add-to-list 'default-frame-alist (cons 'left (* 30 (frame-char-width)))) ;; new way to set left of the Emacs init window
-      )
-  )
+      ;; init exec-path-from-shell for window based Emacs
+      (when (package-installed-p 'exec-path-from-shell)
+	(unless (featurep 'exec-path-from-shell-initialize)
+	  (require 'exec-path-from-shell))
+	(exec-path-from-shell-initialize))))
 
 ;(add-hook 'emacs-lisp-mode-hook
 ;	  'enable-paren-auto-pairs)
@@ -43,9 +46,4 @@
 	  )
 	)
   )
-;; init exec-path-from-shell for window based Emacs
-(when (package-installed-p 'exec-path-from-shell)
-  (unless (featurep 'exec-path-from-shell-initialize)
-    (require 'exec-path-from-shell))
-  (exec-path-from-shell-initialize))
 (provide 'init-others)
