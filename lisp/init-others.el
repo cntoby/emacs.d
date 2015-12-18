@@ -34,6 +34,9 @@
 ;(global-set-key (kbd "C-m") nil)
 (setq default-fill-column 80) ; limit line length to 80 character
 
+(setq inhibit-startup-message t) ;; don't display the startup message
+(global-linum-mode t) ;; show line number
+
 (defun enable-paren-auto-pairs ()
   (interactive)
   (show-paren-mode)
