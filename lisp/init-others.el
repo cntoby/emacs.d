@@ -37,6 +37,12 @@
 (setq inhibit-startup-message t) ;; don't display the startup message
 (global-linum-mode t) ;; show line number
 
+;; set indent
+(setq indent-tabs-mode nil)
+;;(setq tab-width 4)
+;;(add-hook 'c-mode-hook '(lambda ()
+;;			  (setq c-basic-offset 4)))
+
 (defun enable-paren-auto-pairs ()
   (interactive)
   (show-paren-mode)
