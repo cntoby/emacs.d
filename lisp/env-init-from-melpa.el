@@ -19,6 +19,8 @@
   ;;  (package-install 'smex))
   (unless (package-installed-p 'sublime-themes)
     (package-install 'sublime-themes))
+  (unless (package-installed-p 'material-theme)
+    (package-install 'material-theme))
   (unless (package-installed-p 'window-numbering)
     (package-install 'window-numbering))
   (unless (package-installed-p 'yasnippet)
