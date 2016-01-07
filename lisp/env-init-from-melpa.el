@@ -41,6 +41,12 @@
     (package-install 'company-ghc)
     (package-install 'company-ghci))
   (unless (package-installed-p 'erlang)
-    (package-install 'erlang)))
+    (package-install 'erlang))
+  (unless (package-installed-p 'python-info)
+    (package-install 'python-info))
+  (unless (package-installed-p 'python3-info)
+    (package-install 'python3-info))
+  (unless (package-installed-p 'man-commands)
+    (package-install 'man-commands)))
 
 (provide 'env-init-from-melpa)

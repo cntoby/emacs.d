@@ -4,6 +4,9 @@
   (add-hook 'go-mode-hook (lambda ()
 			    (local-set-key (kbd "M-.") #'godef-jump)))
   (add-hook 'before-save-hook #'gofmt-before-save) ; format code before save
+  (add-hook 'go-mode-hook (lambda ()
+			    (local-set-key (kbd "C-c i") 'go-goto-imports)
+			    (local-set-key (kbd "C-c C-r") 'go-remove-unused-imports)))
 
   (when (package-installed-p 'go-eldoc)
     (require 'go-eldoc)
