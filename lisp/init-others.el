@@ -37,6 +37,7 @@
 (setq inhibit-startup-message t) ;; don't display the startup message
 (global-linum-mode t) ;; show line number
 
+(global-set-key (kbd "C-x g") 'magit-status)
 ;; set indent
 (setq indent-tabs-mode nil)
 ;;(setq tab-width 4)
