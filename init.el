@@ -33,6 +33,7 @@
 (require 'init-circe)
 (require 'init-erlang)
 (require 'init-typescript)
+(require 'init-magit)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
