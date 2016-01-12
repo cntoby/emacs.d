@@ -47,6 +47,8 @@
   (unless (package-installed-p 'python3-info)
     (package-install 'python3-info))
   (unless (package-installed-p 'man-commands)
-    (package-install 'man-commands)))
+    (package-install 'man-commands))
+  (unless (package-installed-p 'magit)
+    (package-install 'magit)))
 
 (provide 'env-init-from-melpa)
