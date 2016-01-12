@@ -30,6 +30,7 @@
 ;(add-hook 'emacs-lisp-mode-hook
 ;	  'enable-paren-auto-pairs)
 
+(defalias 'yes-or-no-p 'y-or-n-p)
 (add-hook 'after-init-hook 'enable-paren-auto-pairs)
 ;(global-set-key (kbd "C-m") nil)
 (setq default-fill-column 80) ; limit line length to 80 character
