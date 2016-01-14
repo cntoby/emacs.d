@@ -1,9 +1,5 @@
 (require 'package)
 
-;; remove proxy settings
-(setenv "http_proxy" nil)
-(setenv "https_proxy" nil)
-
 (add-to-list 'package-archives
 	     '("melpa" . "https://melpa.org/packages/"))
 (when (< emacs-major-version 24)
