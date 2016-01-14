@@ -33,6 +33,8 @@
       (package-install pkg)))
   (when (and (package-installed-p 'company) (package-installed-p 'haskell-mode))
     (package-install 'company-ghc)
-    (package-install 'company-ghci)))
+    (package-install 'company-ghci))
+  (when (and (package-installed-p 'go-mode) (not (package-installed-p 'go-eldoc)))
+    (package-install 'go-eldoc)))
 
 (provide 'env-init-from-melpa)
