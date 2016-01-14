@@ -1,54 +1,37 @@
+(setq env-init--package-list
+      '(company
+	go-mode
+	haskell-mode
+	helm
+	markdown-mode
+	php-mode
+	projectile
+	;;smex
+	sublime-themes
+	material-theme
+	window-numbering
+	yasnippet
+	go-snippets
+	haskell-snippets
+	ycmd
+	company-ycmd
+	flycheck
+	flycheck-ycmd
+	erlang
+	python-info
+	python3-info
+	man-commands
+	magit))
+
 (defun env-init-from-melpa ()
+  "Develop environment init function"
   (interactive)
   (package-refresh-contents)
-  (unless (package-installed-p 'company)
-    (package-install 'company))
-  (unless (package-installed-p 'go-mode)
-    (package-install 'go-mode))
-  (unless (package-installed-p 'haskell-mode)
-    (package-install 'haskell-mode))
-  (unless (package-installed-p 'helm)
-    (package-install 'helm))
-  (unless (package-installed-p 'markdown-mode)
-    (package-install 'markdown-mode))
-  (unless (package-installed-p 'php-mode)
-    (package-install 'php-mode))
-  (unless (package-installed-p 'projectile)
-    (package-install 'projectile))
-  ;;(unless (package-installed-p 'smex)
-  ;;  (package-install 'smex))
-  (unless (package-installed-p 'sublime-themes)
-    (package-install 'sublime-themes))
-  (unless (package-installed-p 'material-theme)
-    (package-install 'material-theme))
-  (unless (package-installed-p 'window-numbering)
-    (package-install 'window-numbering))
-  (unless (package-installed-p 'yasnippet)
-    (package-install 'yasnippet))
-  (unless (package-installed-p 'go-snippets)
-    (package-install 'go-snippets))
-  (unless (package-installed-p 'haskell-snippets)
-    (package-install 'haskell-snippets))
-  (unless (package-installed-p 'ycmd)
-    (package-install 'ycmd))
-  (unless (package-installed-p 'company-ycmd)
-    (package-install 'company-ycmd))
-  (unless (package-installed-p 'flycheck)
-    (package-install 'flycheck))
-  (unless (package-installed-p 'flycheck-ycmd)
-    (package-install 'flycheck-ycmd))
+  (dolist (pkg env-init--package-list)
+    (unless (package-installed-p pkg)
+      (package-install pkg)))
   (when (and (package-installed-p 'company) (package-installed-p 'haskell-mode))
     (package-install 'company-ghc)
-    (package-install 'company-ghci))
-  (unless (package-installed-p 'erlang)
-    (package-install 'erlang))
-  (unless (package-installed-p 'python-info)
-    (package-install 'python-info))
-  (unless (package-installed-p 'python3-info)
-    (package-install 'python3-info))
-  (unless (package-installed-p 'man-commands)
-    (package-install 'man-commands))
-  (unless (package-installed-p 'magit)
-    (package-install 'magit)))
+    (package-install 'company-ghci)))
 
 (provide 'env-init-from-melpa)
