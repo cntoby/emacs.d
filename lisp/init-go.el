@@ -1,5 +1,4 @@
 (when (package-installed-p 'go-mode)
-  (setenv "GOPATH" (expand-file-name "~/Devel/goprojects/"))
   (require 'go-mode-autoloads)
   (add-hook 'go-mode-hook (lambda ()
 			    (local-set-key (kbd "M-.") #'godef-jump)))
