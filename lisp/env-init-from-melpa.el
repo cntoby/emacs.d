@@ -22,7 +22,8 @@
 	python3-info
 	man-commands
 	magit
-	exec-path-from-shell))
+	exec-path-from-shell
+	powerline))
 
 (defun env-init--from-melpa ()
   "Develop environment init function"
