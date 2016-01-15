@@ -30,6 +30,7 @@
 (require 'init-erlang)
 (require 'init-typescript)
 (require 'init-magit)
+(require 'init-powerline)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
