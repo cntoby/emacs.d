@@ -24,7 +24,7 @@
 	magit
 	exec-path-from-shell))
 
-(defun env-init-from-melpa ()
+(defun env-init--from-melpa ()
   "Develop environment init function"
   (interactive)
   (package-refresh-contents)
