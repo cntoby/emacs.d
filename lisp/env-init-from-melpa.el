@@ -60,6 +60,7 @@
   "Develop environment init function"
   (interactive)
   (package-refresh-contents)
+  (package-install 'org)
   (dolist (pkg env-init--package-list)
     (unless (package-installed-p pkg)
       (package-install pkg)))
