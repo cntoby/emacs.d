@@ -31,6 +31,7 @@
 (require 'init-typescript)
 (require 'init-magit)
 (require 'init-powerline)
+;(require 'init-blog-admin)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
