@@ -36,7 +36,7 @@
 (setq default-fill-column 80) ; limit line length to 80 character
 
 (setq inhibit-startup-message t) ;; don't display the startup message
-(global-linum-mode t) ;; show line number
+;(global-linum-mode t) ;; show line number
 
 ;; set indent
 (setq indent-tabs-mode nil)
