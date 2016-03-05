@@ -19,11 +19,8 @@
   (add-hook 'c++-mode-hook 'ycmd-mode)
   (add-hook 'php-mode-hook 'ycmd-mode)
   (add-hook 'rust-mode-hook 'ycmd-mode)
-<<<<<<< HEAD
   (add-hook 'rust-mode-hook '(lambda () (set-variable 'rust_src_path "./")))
-=======
   (add-hook 'csharp-mode-hook 'ycmd-mode)
->>>>>>> 1480e7d14ce219ef03d34c2b48034985515a9f3f
 
   (when (package-installed-p 'company-ycmd)
     (require 'company-ycmd)
