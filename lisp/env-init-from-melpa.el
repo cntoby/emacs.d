@@ -35,6 +35,7 @@
 	typescript-mode
 	web-mode
 	yaml-mode
+	rust-mode
 	websocket
 	;;xcscope
 	sublime-themes
