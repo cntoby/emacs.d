@@ -46,6 +46,8 @@
 	ycmd
 	company-ycmd
 	flycheck
+	flycheck-rust
+	flycheck-haskell
 	flycheck-ycmd
 	erlang
 ;;	python-environment
