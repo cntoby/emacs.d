@@ -1,7 +1,7 @@
 (when (package-installed-p 'ycmd)
   (require 'ycmd)
   (ycmd-setup)
-  (ycmd-toggle-force-semantic-completion)
+ ; (ycmd-toggle-force-semantic-completion)
 					;(add-hook 'after-init-hook #'global-ycmd-mode)
   (cond ((string-equal system-type "darwin")
 	 (progn
@@ -14,8 +14,6 @@
 	   (set-variable 'ycmd-server-command (list "/usr/bin/python" (expand-file-name "~/.emacs.d/ycmd/ycmd/"))))))
   (set-variable 'ycmd-global-config (expand-file-name "~/.emacs.d/_ycmd_extra_conf.py"))
   (set-variable 'ycmd-extra-conf-whitelist '("~/Devel/*"))
-  (add-hook 'c-mode-hook 'ycmd-mode)
-  (add-hook 'c++-mode-hook 'ycmd-mode)
   (add-hook 'php-mode-hook 'ycmd-mode)
   (add-hook 'csharp-mode-hook 'ycmd-mode)
 
