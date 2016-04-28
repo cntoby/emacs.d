@@ -9,3 +9,4 @@ semanticdb
 projectile*
 eshell/
 #.*
+.python-environments
