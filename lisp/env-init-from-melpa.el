@@ -35,6 +35,7 @@
 	web-mode
 	yaml-mode
 	rust-mode
+	rustfmt
 	websocket
 	;;xcscope
 	sublime-themes
@@ -43,6 +44,10 @@
 	yasnippet
 	company
 	company-go
+	company-jedi
+	company-lua
+	company-racer
+	company-tern
 	ycmd
 	company-ycmd
 	flycheck
