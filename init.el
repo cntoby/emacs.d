@@ -31,6 +31,7 @@
 (require 'init-python)
 (require 'init-rust)
 (require 'init-lua)
+(require 'init-irony)
 (require 'init-circe)
 (require 'init-erlang)
 (require 'init-typescript)
