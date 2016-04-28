@@ -2,7 +2,7 @@
       '(company
 	go-mode
 	go-snippets
-	;;go-eldoc
+	go-eldoc
 	haskell-mode
 	haskell-snippets
 	;;ghc
@@ -21,7 +21,6 @@
 	;;kanban
 	;;circe
 	;;codesearch
-	;;company-go
 	;;company-web
 	;;epresent
 	;;fish-mode
@@ -43,12 +42,13 @@
 	window-numbering
 	yasnippet
 	company
+	company-go
 	ycmd
 	company-ycmd
 	flycheck
 	flycheck-ycmd
 	erlang
-	python-environment
+;;	python-environment
 	python-info
 	python3-info
 	man-commands
