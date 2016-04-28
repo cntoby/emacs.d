@@ -52,12 +52,12 @@
 	irony-eldoc
 	company-irony
 	company-irony-c-headers
-	ycmd
-	company-ycmd
+	;;ycmd
+	;;company-ycmd
 	flycheck
 	flycheck-rust
 	flycheck-haskell
-	flycheck-ycmd
+	;;flycheck-ycmd
 	flycheck-irony
 	erlang
 ;;	python-environment
