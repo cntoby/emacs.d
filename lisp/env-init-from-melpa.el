@@ -12,6 +12,7 @@
 	helm-projectile
 	markdown-mode
 	jekyll-modes
+	cmake-mode
 	projectile
 	projectile-codesearch
 	pkg-info
