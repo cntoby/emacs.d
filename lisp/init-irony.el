@@ -1,4 +1,4 @@
-(when (package-installed-p 'irony)
+(when (package-installed-p 'irony) ;; must install developer tools, in mac os x, run `xcode-select --install' in terminal
   (add-hook 'c++-mode-hook 'irony-mode)
   (add-hook 'c-mode-hook 'irony-mode)
   (add-hook 'objc-mode-hook 'irony-mode)
