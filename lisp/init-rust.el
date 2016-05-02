@@ -14,14 +14,10 @@
 		'(lambda ()
 		   (racer-activate)
 		   (racer-turn-on-eldoc)
-		   ;; Use flycheck-rust in rust-mode
-		   (add-hook 'flycheck-mode-hook #'flycheck-rust-setup)
-		   ;; Use company-racer in rust mode
 		   (set (make-local-variable 'company-backends) '(company-racer))
-		   ;; Key binding to jump to method definition
+		   (add-hook 'flycheck-mode-hook #'flycheck-rust-setup)
 		   (local-set-key (kbd "M-.") #'racer-find-definition)
-		   ;; Key binding to auto complete and indent
 		   (local-set-key (kbd "TAB") #'racer-complete-or-indent))))
   (when (package-installed-p 'rustfmt)
-    (add-hook 'rust-mode-hook #'rustfmt-enable-on-save)))
+    (add-hook 'rust-mode-hook #'rustfmt-enable-on-save))))
 (provide 'init-rust)
