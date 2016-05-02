@@ -47,6 +47,7 @@
 	company-go
 	company-jedi
 	company-lua
+	racer
 	company-racer
 	company-tern
 	irony
