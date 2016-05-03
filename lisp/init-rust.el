@@ -10,13 +10,11 @@
     (with-eval-after-load 'company
       (add-to-list 'company-backends 'company-racer))
     (when (package-installed-p 'racer)
-      (add-hook 'rust-mode-hook
-		'(lambda ()
-		   (racer-mode)
-		   (eldoc-mode)
-		   (add-hook 'flycheck-mode-hook #'flycheck-rust-setup)
-		   (local-set-key (kbd "M-.") #'racer-find-definition)
-		   (local-set-key (kbd "TAB") #'company-indent-or-complete-common))))
+      (add-hook 'rust-mode-hook #'racer-mode)
+      (add-hook 'racer-mode-hook #'eldoc-mode)
+      (add-hook 'flycheck-mode-hook #'flycheck-rust-setup)
+      (local-set-key (kbd "M-.") #'racer-find-definition)
+      (local-set-key (kbd "TAB") #'company-indent-or-complete-common))
   (when (package-installed-p 'rustfmt)
     (add-hook 'rust-mode-hook #'rustfmt-enable-on-save))))
 (provide 'init-rust)
