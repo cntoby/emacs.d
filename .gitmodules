@@ -1,6 +1,3 @@
-[submodule "blog-admin"]
-	path = blog-admin
-	url = https://github.com/CodeFalling/blog-admin.git
 [submodule "elpa"]
 	path = elpa
 	url = https://phpy.org/cntoby/my-elpa.git
