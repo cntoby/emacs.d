@@ -3,4 +3,4 @@
 	url = https://github.com/CodeFalling/blog-admin.git
 [submodule "elpa"]
 	path = elpa
-	url = git@github.com:cntoby/my-elpa.git
+	url = https://phpy.org/cntoby/my-elpa.git
