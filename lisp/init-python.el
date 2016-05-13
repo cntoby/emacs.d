@@ -6,6 +6,7 @@
 	      (setq jedi:use-shortcuts t)
 	      (add-to-list 'company-backends 'company-jedi)
 	      (local-set-key (kbd "M-.") #'jedi:goto-definition)
-	      (local-set-key (kbd "C-c C-d") #'jedi:show-doc))))
+	      (local-set-key (kbd "C-c C-d") #'jedi:show-doc)))
+  (add-hook 'python-mode-hook 'turn-on-eldoc-mode))
 ; (add-hook 'python-mode-hook 'jedi:setup) ; execute jedi:install-server when first running
 (provide 'init-python)
