@@ -68,6 +68,7 @@
 	man-commands
 	magit
 	magit-popup
+	dockerfile-mode
 	exec-path-from-shell
 	powerline))
 
