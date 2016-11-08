@@ -1,5 +1,5 @@
 (when (package-installed-p 'go-mode)
-  (require 'go-mode-autoloads)
+  (require 'go-mode)
   (add-hook 'go-mode-hook (lambda ()
 			    (local-set-key (kbd "M-.") #'godef-jump)))
   (add-hook 'before-save-hook #'gofmt-before-save) ; format code before save
