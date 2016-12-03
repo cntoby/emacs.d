@@ -37,6 +37,7 @@
 (require 'init-typescript)
 (require 'init-magit)
 (require 'init-powerline)
+(require 'init-js)
 ;(require 'init-blog-admin)
 
 (custom-set-variables
