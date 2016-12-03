@@ -46,6 +46,8 @@
 ;;(add-hook 'c-mode-hook '(lambda ()
 ;;			  (setq c-basic-offset 4)))
 
+(global-hl-line-mode 1) ; highlight the current line
+
 (defun enable-paren-auto-pairs ()
   (interactive)
   (show-paren-mode)
