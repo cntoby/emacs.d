@@ -30,9 +30,10 @@
 	org-pandoc
 	;;org-tree-slide
 	php-mode
+	; company-php
 	lua-mode
 	js2-mode
-	typescript-mode
+	;typescript-mode
 	web-mode
 	yaml-mode
 	rust-mode
@@ -63,8 +64,8 @@
 	flycheck-irony
 	erlang
 ;;	python-environment
-	python-info
-	python3-info
+	;python-info
+	;python3-info
 	man-commands
 	magit
 	magit-popup
