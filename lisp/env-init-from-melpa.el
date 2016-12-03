@@ -29,10 +29,11 @@
 	org-journal
 	org-pandoc
 	;;org-tree-slide
-	php-mode
+	;;php-mode
 	; company-php
 	lua-mode
 	js2-mode
+	nodejs-repl
 	;typescript-mode
 	web-mode
 	yaml-mode
