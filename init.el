@@ -11,7 +11,7 @@
 (when (string-equal system-type "darwin")
   (let ((default-directory "/usr/local/share/emacs/site-lisp/"))
     (normal-top-level-add-subdirs-to-load-path)))
-
+(setq server-use-tcp t)
 (require 'env-init-from-melpa)
 (require 'init-others)
 (require 'init-themes)
