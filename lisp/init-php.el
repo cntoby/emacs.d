@@ -1,5 +1,4 @@
-(when (package-installed-p 'php-mode)
-  (require 'php-mode)
+(when (package-installed-p 'company-php)
   (add-hook 'php-mode-hook
 	    '(lambda ()
 	       (require 'company-php)

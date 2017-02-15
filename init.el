@@ -17,7 +17,7 @@
 (require 'init-themes)
 (require 'init-org-mode)
 (require 'init-yasnippet)
-; (require 'init-php)
+(require 'init-php)
 (require 'init-haskell)
 (require 'init-markdown)  
 (require 'init-semantic)
