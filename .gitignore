@@ -12,3 +12,4 @@ eshell/
 .python-environments
 irony
 server/*
+tramp
