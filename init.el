@@ -1,9 +1,11 @@
 (require 'package)
 
-(add-to-list 'package-archives
-	     '("melpa" . "https://melpa.org/packages/"))
-(when (< emacs-major-version 24)
-  (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/")))
+;(add-to-list 'package-archives
+;	     '("melpa" . "https://melpa.org/packages/"))
+;(when (< emacs-major-version 24)
+;  (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/")))
+(setq package-archives '(("gnu"   . "http://elpa.emacs-china.org/gnu/")
+                         ("melpa" . "http://elpa.emacs-china.org/melpa/")))
 (package-initialize)
 
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
