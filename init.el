@@ -40,6 +40,7 @@
 (require 'init-magit)
 (require 'init-powerline)
 (require 'init-js)
+(require 'init-elm)
 ;(require 'init-blog-admin)
 
 (custom-set-variables
@@ -54,7 +55,7 @@
    "pandoc -f markdown -t html -s -—mathjax -—highlight-style pygments")
  '(package-selected-packages
    (quote
-    (nodejs-repl company-php yaml-mode window-numbering websocket web-mode sublime-themes rustfmt racer projectile-codesearch powerline org-pandoc org-journal omnisharp material-theme markdown-mode man-commands magit js2-mode jekyll-modes irony-eldoc helm-projectile haskell-snippets go-snippets go-eldoc flycheck-rust flycheck-irony flycheck-haskell exec-path-from-shell erlang dockerfile-mode company-tern company-racer company-lua company-jedi company-irony-c-headers company-irony company-go company-ghci company-ghc cmake-mode))))
+    (elm-mode elm-yasnippets nodejs-repl company-php yaml-mode window-numbering websocket web-mode sublime-themes rustfmt racer projectile-codesearch powerline org-pandoc org-journal omnisharp material-theme markdown-mode man-commands magit js2-mode jekyll-modes irony-eldoc helm-projectile haskell-snippets go-snippets go-eldoc flycheck-rust flycheck-irony flycheck-haskell exec-path-from-shell erlang dockerfile-mode company-tern company-racer company-lua company-jedi company-irony-c-headers company-irony company-go company-ghci company-ghc cmake-mode))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
