@@ -3,6 +3,7 @@
 	go-mode
 	go-snippets
 	go-eldoc
+	go-guru
 	haskell-mode
 	haskell-snippets
 	;;ghc

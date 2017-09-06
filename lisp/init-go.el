@@ -18,6 +18,10 @@
   (when (memq window-system '(mac ns))
     (when (featurep 'exec-path-from-shell-initialize)
       (exec-path-from-shell-copy-env "GOPATH")))
+  (when (package-installed-p 'go-guru)
+    (require 'go-guru)
+    (go-guru-hl-identifier-mode)
+    (add-hook 'go-mode-hook #'go-guru-hl-identifier-mode))
   (when (package-installed-p 'company-go)
     (require 'company-go)
     (add-hook 'go-mode-hook
