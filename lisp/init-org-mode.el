@@ -6,5 +6,7 @@
 (define-key global-map "\C-ca" 'org-agenda)
 (setq org-log-done t)
 (setq org-agenda-files (list "~/Documents/gtd/"))
+;(load-library "find-lisp")
+;(setq org-agenda-files (find-lisp-find-files "~/Documents/gtd" "\.org$"))
 
 (provide 'init-org-mode)
