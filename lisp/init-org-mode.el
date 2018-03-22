@@ -10,7 +10,7 @@
 (setq org-agenda-files (list "~/Documents/gtd/" "~/org/"))
 (defun gtd ()
     (interactive)
-    (find-file (concat "~/Documents/gtd/" (format-time-string "%Y-%m-%d") "-work.org")))
+    (find-file (concat "~/Documents/gtd/" (format-time-string "%Y-%m-%d") "-todo.org")))
 ;(load-library "find-lisp")
 ;(setq org-agenda-files (find-lisp-find-files "~/Documents/gtd" "\.org$"))
 
