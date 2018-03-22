@@ -7,7 +7,10 @@
 (define-key global-map "\C-cc" 'org-capture)
 (define-key global-map "\C-cb" 'org-iswitchb)
 (setq org-log-done t)
-(setq org-agenda-files (list "~/Documents/gtd/"))
+(setq org-agenda-files (list "~/Documents/gtd/" "~/org/"))
+(defun gtd ()
+    (interactive)
+    (find-file (concat "~/Documents/gtd/" (format-time-string "%Y-%m-%d") "-work.org")))
 ;(load-library "find-lisp")
 ;(setq org-agenda-files (find-lisp-find-files "~/Documents/gtd" "\.org$"))
 
