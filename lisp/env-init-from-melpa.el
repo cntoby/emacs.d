@@ -52,6 +52,7 @@
 	company-lua
 	racer
 	company-racer
+	cargo
 	company-tern
 	irony
 	irony-eldoc

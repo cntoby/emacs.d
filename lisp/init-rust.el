@@ -27,10 +27,16 @@
     ;; Reduce the number of characters before company kicks in
     ;(setq company-minimum-prefix-length 1)
     ;; Set path to racer binary
+
+    (add-hook 'rust-mode-hook #'company-mode)
+    (add-hook 'rust-mode-hook #'eldoc-mode)
+    (add-hook 'rust-mode-hook #'racer-mode)
+    (add-hook 'rust-mode-hook 'cargo-minor-mode)
+
     (setq racer-cmd (expand-file-name "~/.cargo/bin/racer"))
 
     ;; Set path to rust src directory
-    (setq racer-rust-src-path (expand-file-name "~/.rust/src/"))
+    (setq racer-rust-src-path (expand-file-name "~/Devel/rust/src/"))
 
     ;; Load rust-mode when you open `.rs` files
     (add-to-list 'auto-mode-alist '("\\.rs\\'" . rust-mode))
@@ -39,13 +45,16 @@
     (add-hook 'rust-mode-hook
 	      '(lambda ()
 		 ;; Enable racer
-		 (racer-activate)
+		 ;(racer-activate)
 
 		 ;; Hook in racer with eldoc to provide documentation
-		 (racer-turn-on-eldoc)
+		 ;(racer-turn-on-eldoc)
 
 		 ;; Use flycheck-rust in rust-mode
 		 (add-hook 'flycheck-mode-hook #'flycheck-rust-setup)
+
+		 (local-set-key (kbd "C-c <tab>") #'rust-format-buffer)
+		 (add-hook 'rust-mode-hook #'rustfmt-enable-on-save)
 
 		 ;; Use company-racer in rust mode
 		 (set (make-local-variable 'company-backends) '(company-racer))
