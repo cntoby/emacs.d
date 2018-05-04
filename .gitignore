@@ -13,3 +13,4 @@ eshell/
 irony
 server/*
 tramp
+.mc-lists.el
