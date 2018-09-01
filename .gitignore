@@ -14,3 +14,4 @@ irony
 server/*
 tramp
 .mc-lists.el
+elpa/
