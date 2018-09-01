@@ -28,7 +28,7 @@
 	;;fish-mode
 	org
 	org-journal
-	org-pandoc
+	;;org-pandoc
 	;;org-tree-slide
 	;;php-mode
 	; company-php
@@ -39,7 +39,7 @@
 	web-mode
 	yaml-mode
 	rust-mode
-	rustfmt
+	;;rustfmt
 	websocket
 	;;xcscope
 	sublime-themes
