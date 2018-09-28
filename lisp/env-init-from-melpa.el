@@ -33,9 +33,18 @@
 	;;php-mode
 	; company-php
 	lua-mode
+	;; javascript & typescript
 	js2-mode
+	js2-refactor
+	import-js
+	js-import
+	js-auto-format-mode
+	js-doc
+	jsfmt
 	nodejs-repl
-	;typescript-mode
+	typescript-mode
+	tide
+	;; other
 	web-mode
 	yaml-mode
 	rust-mode
