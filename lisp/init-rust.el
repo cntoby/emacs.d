@@ -33,10 +33,10 @@
     (add-hook 'rust-mode-hook #'racer-mode)
     (add-hook 'rust-mode-hook 'cargo-minor-mode)
 
-    (setq racer-cmd (expand-file-name "~/.cargo/bin/racer"))
+    ;;(setq racer-cmd (expand-file-name "/usr/lo"))
 
     ;; Set path to rust src directory
-    (setq racer-rust-src-path (expand-file-name "~/Devel/rust/src/"))
+    ;;(setq racer-rust-src-path (expand-file-name "~/Devel/rust/src/"))
 
     ;; Load rust-mode when you open `.rs` files
     (add-to-list 'auto-mode-alist '("\\.rs\\'" . rust-mode))

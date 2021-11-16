@@ -1,0 +1,5 @@
+(require 'hexo)
+(defun hexo-my-blog ()
+  (interactive)
+  (hexo "~/www.tobycn.org/"))
+(provide 'init-hexo)
