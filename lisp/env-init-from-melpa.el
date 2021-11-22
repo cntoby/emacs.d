@@ -1,5 +1,12 @@
 (setq env-init--package-list
-      '(company
+      '(auxtex
+	auxtex-latexmk
+	latex-extra
+	latex-math-preview
+	latex-pretty-symbols
+	latex-preview-pane
+	latex-unicode-math-mode
+	company
 	go-mode
 	go-snippets
 	go-eldoc
@@ -7,6 +14,7 @@
 	haskell-mode
 	haskell-snippets
 	;;ghc
+	hexo
 	helm
 	helm-core
 	;;helm-circe

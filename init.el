@@ -53,10 +53,16 @@
  '(custom-safe-themes
    '("9b59e147dbbde5e638ea1cde5ec0a358d5f269d27bd2b893a0947c4a867e14c1" "3cc2385c39257fed66238921602d8104d8fd6266ad88a006d0a4325336f5ee02" default))
  '(package-selected-packages
-   '(hexo company-plsense flycheck-golangci-lint flycheck-perl6 flymake-php flymake-shell perl6-mode company-quickhelp format-all import-js js-auto-format-mode js-doc js-import jsfmt tide typescript-mode docker-compose-mode js2-refactor xref-js2 cargo kotlin-mode elm-mode elm-yasnippets nodejs-repl company-php yaml-mode window-numbering websocket web-mode sublime-themes rustfmt racer projectile-codesearch powerline org-pandoc org-journal omnisharp material-theme markdown-mode man-commands magit js2-mode jekyll-modes irony-eldoc helm-projectile haskell-snippets go-snippets go-eldoc flycheck-rust flycheck-irony flycheck-haskell exec-path-from-shell erlang dockerfile-mode company-tern company-racer company-lua company-jedi company-irony-c-headers company-irony company-go company-ghci company-ghc cmake-mode)))
+   '(latex-extra latex-math-preview latex-pretty-symbols latex-preview-pane latex-unicode-math-mode auctex auctex-latexmk hexo company-plsense flycheck-golangci-lint flycheck-perl6 flymake-php flymake-shell perl6-mode company-quickhelp format-all import-js js-auto-format-mode js-doc js-import jsfmt tide typescript-mode docker-compose-mode js2-refactor xref-js2 cargo kotlin-mode elm-mode elm-yasnippets nodejs-repl company-php yaml-mode window-numbering websocket web-mode sublime-themes rustfmt racer projectile-codesearch powerline org-pandoc org-journal omnisharp material-theme markdown-mode man-commands magit js2-mode jekyll-modes irony-eldoc helm-projectile haskell-snippets go-snippets go-eldoc flycheck-rust flycheck-irony flycheck-haskell exec-path-from-shell erlang dockerfile-mode company-tern company-racer company-lua company-jedi company-irony-c-headers company-irony company-go company-ghci company-ghc cmake-mode)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ '(default ((t (:background nil))))
+ '(company-preview ((t (:foreground "darkgray" :underline t))))
+ '(company-preview-common ((t (:inherit company-preview))))
+ '(company-tooltip ((t (:background "lightgray" :foreground "black"))))
+ '(company-tooltip-common ((((type x)) (:inherit company-tooltip :weight bold)) (t (:inherit company-tooltip))))
+ '(company-tooltip-common-selection ((((type x)) (:inherit company-tooltip-selection :weight bold)) (t (:inherit company-tooltip-selection))))
+ '(company-tooltip-selection ((t (:background "steelblue" :foreground "white")))))
